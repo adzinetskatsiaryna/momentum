@@ -306,9 +306,9 @@ function getUnplashApi(){
   }else if(currentTimeOfDay === 'evening'){
     imageSrc = `url(https://images.unsplash.com/photo-1500964757637-c85e8a162699?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjc5NzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MzQ5MjUzMjI&ixlib=rb-1.2.1&q=80&w=1080)`
   }else if(currentTimeOfDay ==='night'){
-
+    imageSrc = `url(https://images.unsplash.com/photo-1491466424936-e304919aada7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjc5NzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MzQ5Mzk2MzA&ixlib=rb-1.2.1&q=80&w=1080)`
   }else if(currentTimeOfDay ==='morning'){
-
+    imageSrc = `url(https://images.unsplash.com/photo-1544297787-43ce4f544585?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjc5NzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MzQ5NzAwODg&ixlib=rb-1.2.1&q=80&w=1080)`
   }
  
   async function getLinkToImage() {
@@ -364,9 +364,9 @@ function getFlickerApi (){
   } else if(currentTimeOfDay ==='evening'){
     imageSrc='url(https://live.staticflickr.com/65535/51618416961_9d122c381e_b.jpg)'
   }else if(currentTimeOfDay ==='night'){
-
+    imageSrc='url(https://live.staticflickr.com/65535/51618302942_cb0ffde1b1_b.jpg)'
   }else if(currentTimeOfDay ==='morning'){
-
+    imageSrc='url(https://live.staticflickr.com/65535/51619178562_af464fdaae_b.jpg)'
   }
  
 
@@ -374,10 +374,8 @@ function getFlickerApi (){
   async function getLinkToImage() {
   const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=b9579d525ad5afe02ba47eb2ad89a90e&tags=nature,${currentTimeOfDay}&extras=url_l&format=json&nojsoncallback=1`;
     try{
-        const response = await fetch(url) 
-        
+        const response = await fetch(url)  
         const json =  await response.json() 
-        
         i = Math.floor(Math.random() * (100-1) + 1)
         const data = json.photos.photo[i].url_l
        
